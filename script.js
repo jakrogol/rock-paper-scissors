@@ -40,6 +40,7 @@ function playRound(humanChoice, computerChoice) {
   }
   else if (humanChoice == 'scissors' && computerChoice == 'paper') {
     console.log("You win! Scissors beats paper!");
+    humanScore++;
   }
   else {
     console.log(`You threw ${humanChoice} and the computer ALSO threw ${computerChoice}. Tie!`);
