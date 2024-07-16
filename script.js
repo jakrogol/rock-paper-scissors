@@ -18,14 +18,14 @@ function playRound(humanChoice) {
   if ((humanChoice == 'rock' && computerChoice == 'scissors')
     || (humanChoice == 'paper' && computerChoice == 'rock')
     || (humanChoice == 'scissors' && computerChoice == 'paper')) {
-      resultMsg.textContent = `You win! ${capitalize(humanChoice)} beats ${computerChoice}!`;
+      resultMsg.textContent = `${capitalize(humanChoice)} beats ${computerChoice}! You get a point!`;
       results.appendChild(resultMsg);
       humanScore++;
   }
   else if ((computerChoice == 'rock' && humanChoice == 'scissors')
     || (computerChoice == 'paper' && humanChoice == 'rock')
     || (computerChoice == 'scissors' && humanChoice == 'paper')) {
-      resultMsg.textContent = `You lose. ${capitalize(computerChoice)} beats ${humanChoice}.`;
+      resultMsg.textContent = `${capitalize(computerChoice)} beats ${humanChoice}. Computer gets a point.`;
       results.appendChild(resultMsg);
       computerScore++;
   }
