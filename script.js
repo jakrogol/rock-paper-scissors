@@ -33,8 +33,22 @@ function playRound(humanChoice) {
     resultMsg.textContent = `You threw ${humanChoice} and the computer ALSO threw ${computerChoice}. Tie!`
     results.appendChild(resultMsg);
   }
-  currentScore.textContent = `Current score - You: ${humanScore}, Them: ${computerScore}`;
-  results.appendChild(currentScore);
+
+  if (humanScore == 5 || computerScore == 5) {
+    const finalMsg = document.createElement("p");
+    if (humanScore > computerScore) {
+      finalMsg.textContent = `You win! Final score = ${humanScore} to ${computerScore}`;
+      results.appendChild(finalMsg);
+    }
+    else {
+      finalMsg.textContent = `You lose... Final score = ${humanScore} to ${computerScore}`;
+      results.appendChild(finalMsg);
+    }
+  }
+  else {
+    currentScore.textContent = `Current score - You: ${humanScore}, Them: ${computerScore}`;
+    results.appendChild(currentScore);
+  }
 }
 
 function getComputerChoice() {
