@@ -35,7 +35,11 @@ function playRound(humanChoice) {
   }
 
   if (humanScore == 5 || computerScore == 5) {
-    const finalMsg = document.createElement("p");
+    const finalMsg = document.createElement("div");
+    buttons.forEach((button) => {
+      button.disabled = true;
+    });
+
     if (humanScore > computerScore) {
       finalMsg.textContent = `You win! Final score = ${humanScore} to ${computerScore}`;
       results.appendChild(finalMsg);
