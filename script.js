@@ -1,8 +1,5 @@
 const options = ['rock', 'paper', 'scissors'];
 
-// const rockBtn = document.querySelector("#rock");
-// const paperBtn = document.querySelector("#paper");
-// const scissorBtn = document.querySelector("#scissors");
 const buttons = document.querySelectorAll('button');
 const results = document.querySelector('#results');
 
@@ -12,8 +9,6 @@ let computerScore = 0;
 buttons.forEach(button => {
   button.addEventListener('click', () => playRound(button.id));
 });
-
-// button.addEventListener("click", console.log("Hoopla"));
 
 function playRound(humanChoice) {
   const computerChoice = getComputerChoice();
