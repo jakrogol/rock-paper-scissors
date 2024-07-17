@@ -49,12 +49,11 @@ function playRound(humanChoice) {
   }
 
   if (humanPoints == 5 || computerPoints == 5) {
-    const finalMsg = document.createElement("div");
     buttons.forEach((button) => {
       button.disabled = true;
     });
 
-    if (humanScore > computerScore) {
+    if (humanPoints > computerPoints) {
       scoreboardHeading.textContent = "You Win!";
     }
     else {
