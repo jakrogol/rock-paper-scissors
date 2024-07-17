@@ -7,6 +7,25 @@
   <title>Rock Paper Scissors</title>
 </head>
 <body>
+  <header>
+    <h1>Rock Paper Scissors!</h1>
+  </header>
+  <div class="scoreboard">
+    <h2 class="scoreboard-heading">Make Your Selection</h2>
+    <h3 class="scoreboard-message">Be the first to score 5 points!</h3>
+    <div class="players">
+      <div class="player-container">
+        <div class="name">You</div>
+        <div class="move" id="human-move">?</div>
+        <div class="score" id="human-score"></div>
+      </div>
+      <div class="player-container">
+        <div class="name">Computer</div>
+        <div class="move" id="computer-move">?</div>
+        <div class="score" id="computer-score"></div>
+      </div>
+    </div>
+  </div>
   <div id="move-container">
     <button id="rock">Rock</button>
     <button id="paper">Paper</button>
