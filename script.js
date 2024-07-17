@@ -23,8 +23,6 @@ buttons.forEach(button => {
 
 function playRound(humanChoice) {
   const computerChoice = getComputerChoice();
-  const resultMsg = document.createElement("p");
-  const currentScore = document.createElement("p");
 
   humanMove.textContent = moves.find(m => m.id === humanChoice).emoji;
   computerMove.textContent = computerChoice.emoji;
@@ -32,20 +30,22 @@ function playRound(humanChoice) {
   if ((humanChoice == 'rock' && computerChoice.id == 'scissors')
     || (humanChoice == 'paper' && computerChoice.id == 'rock')
     || (humanChoice == 'scissors' && computerChoice.id == 'paper')) {
-      resultMsg.textContent = `${capitalize(humanChoice)} beats ${computerChoice.id}! You get a point!`;
-      results.appendChild(resultMsg);
       humanPoints++;
+      scoreboardHeading.textContent =  "You get a point!";
+      scoreboardMsg.textContent = `${capitalize(humanChoice)} beats ${computerChoice.id}!`;
+      humanScore.textContent = humanPoints;
   }
   else if ((computerChoice.id == 'rock' && humanChoice == 'scissors')
     || (computerChoice.id == 'paper' && humanChoice == 'rock')
     || (computerChoice.id == 'scissors' && humanChoice == 'paper')) {
-      resultMsg.textContent = `${capitalize(computerChoice.id)} beats ${humanChoice}. Computer gets a point.`;
-      results.appendChild(resultMsg);
       computerPoints++;
+      scoreboardHeading.textContent = "Computer gets a point..."
+      scoreboardMsg.textContent = `${capitalize(computerChoice.id)} beats ${humanChoice}`;
+      computerScore.textContent = computerPoints;
   }
   else {
-    resultMsg.textContent = `You threw ${humanChoice} and the computer ALSO threw ${computerChoice.id}. Tie!`
-    results.appendChild(resultMsg);
+    scoreboardHeading.textContent = "It's a tie"
+    scoreboardMsg.textContent = `You threw both threw ${humanChoice}`
   }
 
   if (humanPoints == 5 || computerPoints == 5) {
@@ -55,17 +55,12 @@ function playRound(humanChoice) {
     });
 
     if (humanScore > computerScore) {
-      finalMsg.textContent = `You win! Final score = ${humanPoints} to ${computerPoints}`;
-      results.appendChild(finalMsg);
+      scoreboardHeading.textContent = "You Win!";
     }
     else {
-      finalMsg.textContent = `You lose... Final score = ${humanPoints} to ${computerPoints}`;
-      results.appendChild(finalMsg);
+      scoreboardHeading.textContent = "You Lose :(";
     }
-  }
-  else {
-    currentScore.textContent = `Current score - You: ${humanPoints}, Them: ${computerPoints}`;
-    results.appendChild(currentScore);
+    scoreboardMsg.textContent = "Refresh to play again!";
   }
 }
 
