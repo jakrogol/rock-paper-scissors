@@ -2,6 +2,7 @@ html {
   max-width: 400px;
   margin: 0 auto;
   text-align: center;
+  font-family: "Quicksand", san-serif;
 }
 
 h1, h2, h3 {
